@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# Data (download via `make data`)
+data/raw/
+data/processed/
+
+# Model artifacts (rebuild via `make train`)
+artifacts/
+*.joblib
+*.pkl
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kaggle credentials (never commit)
+kaggle.json
+~/.kaggle/
+
+# Logs
+*.log
+lightning_logs/

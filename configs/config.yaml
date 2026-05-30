@@ -1,0 +1,53 @@
+data:
+  kaggle_dataset: "robikscube/hourly-energy-consumption"
+  region: "AEP"
+  raw_path: "data/raw"
+  processed_path: "data/processed"
+  filename: "AEP_hourly.csv"
+
+split:
+  test_size: 0.10      # last 10% held out for final test
+  val_size: 0.10       # preceding 10% for CV
+
+forecasting:
+  horizon: 24          # hours ahead
+  frequency: "h"
+  target_col: "AEP_MW"
+
+cv:
+  n_splits: 5
+  initial_train_size: 8760   # 1 year of hourly data
+  step_size: 168             # advance by 1 week per fold
+
+models:
+  sarima:
+    # EDA-informed fixed order: d=0 (stationary), p=q=2 (ACF/PACF lags 1-2),
+    # seasonal s=24 (daily), P=Q=1
+    order: [2, 0, 2]
+    seasonal_order: [1, 0, 1, 24]
+  lgbm:
+    n_estimators: 500
+    learning_rate: 0.05
+    num_leaves: 63
+    max_depth: 7
+    min_child_samples: 20
+    subsample: 0.8
+    colsample_bytree: 0.8
+  prophet:
+    seasonality_mode: "multiplicative"
+    yearly_seasonality: true
+    weekly_seasonality: true
+    daily_seasonality: true
+  nbeats:
+    input_chunk_length: 168   # 1 week lookback
+    output_chunk_length: 24
+    num_stacks: 2
+    num_blocks: 3
+    num_layers: 4
+    layer_widths: 256
+    n_epochs: 30              # CPU training; subsample to 3 years in train_all.py
+    batch_size: 64
+    learning_rate: 0.001
+
+artifacts_path: "artifacts"
+random_seed: 42
