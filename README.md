@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**[Live Demo →](#)** · **[GitHub →](#)**
+**[Live Demo →](https://huggingface.co/spaces/Youssef57-T/ts-energy-forecasting)** · **[GitHub →](https://github.com/Youssef57-T/ts-energy-forecasting)**
 
 ---
 
@@ -90,4 +90,4 @@ See [WRITEUP.md](WRITEUP.md) for a detailed discussion of what worked, what didn
 
 ## Resume bullet
 
-> Built 24-hour-ahead energy load forecasting system comparing SARIMA, Prophet, LightGBM, and N-BEATS on PJM AEP hourly data (121k hourly observations, 2004–2018); N-BEATS achieved 3.52% MAPE, outperforming all baselines including the seasonal naive; deployed interactive forecast dashboard on HuggingFace Spaces. [[GitHub]](#) [[Demo]](#)
+> Built 24-hour-ahead energy load forecasting system comparing SARIMA, Prophet, LightGBM, and N-BEATS on PJM AEP hourly data (121k hourly observations, 2004–2018); N-BEATS achieved 3.52% MAPE, outperforming all baselines including the seasonal naive; deployed interactive forecast dashboard on HuggingFace Spaces. [[GitHub]](https://github.com/Youssef57-T/ts-energy-forecasting) [[Demo]](https://huggingface.co/spaces/Youssef57-T/ts-energy-forecasting)
